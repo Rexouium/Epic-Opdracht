@@ -13,4 +13,5 @@ Item3prijs = 0.50
 
 totaalPrijs = (Aantalcroissantjes * Item1prijs) + (Aantalstokbroden * Item2prijs - (Aantalkortingsbonnen * Item3prijs))
 
-print(totaalPrijs)
+print("De feestlunch kost je bij de bakker",totaalPrijs, "euro voor de", Aantalcroissantjes, "croissantjes en de", Aantalstokbroden, "stokbroden als de", Aantalkortingsbonnen," kortingsbonnen nog geldig zijn")
+# git debugg?
