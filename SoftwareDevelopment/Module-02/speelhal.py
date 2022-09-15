@@ -8,11 +8,12 @@
 
 
 AantalMensen = int(input("Hoeveel Mensen:"))
+AantalMensen_voor_VR = int(input("Hoe veel mensen voor vr"))
 Total_VR_time = int(input("How manny minutes:"))
 
 toegangsticketPrijs = 7.45
 VR_Minute_prijs = 0.37
 
-TotaalPrijs = ((AantalMensen * toegangsticketPrijs) + ((Total_VR_time / 5) * VR_Minute_prijs))
-
-print("Dit geweldige dagje-uit met 4 mensen in de Speelhal met 45 minuten VR kost je maar:",TotaalPrijs, "Euro")
+TotaalPrijs = ((AantalMensen * toegangsticketPrijs) + (AantalMensen_voor_VR * ((Total_VR_time / 5) * VR_Minute_prijs)))
+TotaalPrijs = round(TotaalPrijs, 2)
+print("Dit geweldige dagje-uit met", AantalMensen, "mensen in de Speelhal met", Total_VR_time, "minuten VR kost je maar:",TotaalPrijs, "Euro")
