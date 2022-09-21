@@ -17,7 +17,7 @@ while True:
   
 
 
-    print("Small 8.00, Medium 10.00, Large 15.00")
+    print("Small", Small_Price,"Medium", Medium_Price,"Large", Large_Price)
     Pizza_Grote = input("Hoe groot? (Options above only) :").lower()
 ###############################################
     if (Pizza_Grote == "small"):
@@ -54,12 +54,12 @@ LargeTotaalPrijs = (Large_Price * Large_Aantal)
 
 TotaalPrijs = (SmallTotaalPrijs + mediumTotaalPrijs + LargeTotaalPrijs)
 
-
-print ("Order Number:", OrderNumber,"-------")
+print(" ")
+print ("Order Number:", OrderNumber,"-----------")
 print ("-----------------------------")
-print ("Small Pizza's", Small_Aantal)
-print ("Medium Pizza's", Medium_Aantal)
-print ("Large Pizza's", Large_Aantal)
+print ("Small Pizza's", Small_Aantal,"Stuks,", Small_Price, "Euro Stuk prijs")
+print ("Medium Pizza's", Medium_Aantal,"Stuks,", Medium_Price, "Euro Stuk prijs")
+print ("Large Pizza's", Large_Aantal,"Stuks,", Large_Price, "Euro Stuk prijs")
 print ("-----------------------------")
 print (TotaalPrijs, "Euro")
 print ("-----------------------------")
