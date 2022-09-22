@@ -38,7 +38,6 @@ elif samsung_Galaxy_S22 >= iPhone_13:
 if  rekenVeriable <= samsung_Galaxy_S22:
     print("Het advies is dus de", telefoon1, "te kopen. Deze is namelijk:", vershilprijs, "Euro goedkoper dan de", telefoon2, "En binnen je budget")
 
-
 if (rekenVeriable >= samsung_Galaxy_S22 and vershilprijs > 50 and (combinatie_prijs - Asus_Zenphone_9) >= 100):
     print("Het advies is dus de", telefoon3, "te kopen. Deze is namelijk:", vershilprijs_alles, "Euro duurder/goedkoper dan de", telefoon1, "En", telefoon2)
 elif (rekenVeriable >= samsung_Galaxy_S22) and vershilprijs > 50 and not vershilprijs_alles >= 100:
