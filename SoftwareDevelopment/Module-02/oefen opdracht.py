@@ -1,8 +1,6 @@
-a = int(input("Voer een gettal in"))
-b = int(input("Voer een gettal in"))
+a = 3
+b = 4
+z = 5
 
-print("a:", a, "b:", b)
-a += b # a = a + b
-b -= a # b =
-
-print("a:", a, "b:", b)
+if a == 2 and b == 5 or( z ==5):
+    print("Great")
