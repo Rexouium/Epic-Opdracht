@@ -1,7 +1,8 @@
 #mitchel brederije
 #Pizza calculator
+from distutils.log import error
 import random
-OrderNumber = int(random.randint(100, 999))
+OrderNumber = random.randint(100, 999)
 
 
 Small_Aantal = 0
@@ -16,36 +17,48 @@ while True:
 
   
 
-
-    print("Small", Small_Price,"Medium", Medium_Price,"Large", Large_Price)
-    Pizza_Grote = input("Hoe groot? (Options above only) :").lower()
+    try:
+        print("Small", Small_Price,"Medium", Medium_Price,"Large", Large_Price)
+        Pizza_Grote = input("Hoe groot? (Options above only) :").lower()
+    except:
+        print(error)
 ###############################################
-    if (Pizza_Grote == "small"):
-        Hoeveel_Small_pizza = int(input("Hoeveel_Small_pizza :"))
+    try:
+        if (Pizza_Grote == "small"):
+            Hoeveel_Small_pizza = int(input("Hoeveel_Small_pizza :"))
 
-        Small_Aantal += Hoeveel_Small_pizza
+            Small_Aantal += Hoeveel_Small_pizza
 
         Continueorstop = str(input("More or Stop"))
-    
+    except:
+        print(error)
 ###############################################
-    if (Pizza_Grote == "medium"):
-        Hoeveel_Medium_pizza = int(input("Hoeveel_Medium_pizza :"))
+    try:
+        if (Pizza_Grote == "medium"):
+           Hoeveel_Medium_pizza = int(input("Hoeveel_Medium_pizza :"))
+           Medium_Aantal += Hoeveel_Medium_pizza
 
-        Medium_Aantal += Hoeveel_Medium_pizza
-
-        Continueorstop = str(input("More or Stop"))
+           Continueorstop = str(input("More or Stop"))
+    except:
+        print(error)
 ###############################################
-    if (Pizza_Grote == "large"):
-        Hoeveel_Large_pizza = int(input("Hoeveel_Large_pizza :"))
+    try:
+        if (Pizza_Grote == "large"):
+            Hoeveel_Large_pizza = int(input("Hoeveel_Large_pizza :"))
 
-        Large_Aantal += Hoeveel_Large_pizza
-    
-        Continueorstop = (input("More or Stop"))
+            Large_Aantal += Hoeveel_Large_pizza
+        
+            Continueorstop = (input("More or Stop"))
 
-    if (Continueorstop == "Stop" or Continueorstop == "stop"):
-        break
-    if (Continueorstop != "Stop" or Continueorstop != "stop"):
-        print("Processing")
+        if (Continueorstop == "Stop" or Continueorstop == "stop"):
+            break
+        if (Continueorstop == "More" or Continueorstop == "more"):
+            print("Processing")
+        if (Continueorstop != "more" and Continueorstop != "More" and Continueorstop != "Stop" and Continueorstop != "stop"):
+            print(error)
+            break
+    except:
+        print(error)
 ###############################################
 
 SmallTotaalPrijs = (Small_Price * Small_Aantal)
