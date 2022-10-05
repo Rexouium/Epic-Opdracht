@@ -76,3 +76,30 @@ print ("Large Pizza's", Large_Aantal,"Stuks,", Large_Price, "Euro Stuk prijs")
 print ("-----------------------------")
 print (TotaalPrijs, "Euro")
 print ("-----------------------------")
+
+
+
+
+
+
+#def get_answer(vraag: str) -> int:
+
+#antwoord = 0
+
+#while True:
+
+#try:
+
+#Antwoord = int(input(vraag))
+
+#break
+
+#exept valueError
+
+#print("Probeer opnieuw")
+
+#return antwoord
+
+
+
+#print("Hoe ood ben je?")
