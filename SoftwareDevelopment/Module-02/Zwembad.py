@@ -1,9 +1,9 @@
 RijAfstand = int(input("Hoe veel Kilometers:"))
-GroteZwembad = int(input("Hoe veel vierkantemeters:"))
 Lengte = float(input("Hoelang:"))
 Hoogte = float(input("HoeHoog"))
 Breedte = float(input("HoeBreed"))
 
+GroteZwembad = (Lengte * Breedte * Hoogte)
 VastePrijs = 0
 EindPrijsKilometers = 0
 UitGraafKosten = 25
@@ -29,6 +29,7 @@ elif RijAfstand >= 50 and GroteZwembad >= 20:
 ###########################################################################
 
 HoeveelGrond = Lengte * Breedte * Hoogte
+print("Uitgraaf kosten =", UitGraafKosten * GroteZwembad, "Euro")
 print("Afvoeren Grond =", HoeveelGrond * AfgevoerdeGrondPrijs, "Euro")
 print("Voor rij kosten =", EindPrijsKilometers, "Euro")
 print("Totaal =", EindPrijsKilometers + HoeveelGrond, "Euro")
