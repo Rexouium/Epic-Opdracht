@@ -8,7 +8,6 @@ VastePrijs = 0
 EindPrijsKilometers = 0
 UitGraafKosten = 25
 AfgevoerdeGrondPrijs =32.50
-
 ###########################################################################
 if RijAfstand < 50 and GroteZwembad < 20:
     VastePrijs = 100
@@ -30,38 +29,32 @@ elif RijAfstand >= 50 and GroteZwembad >= 20:
 #Tegels berekenen
 ###########################################################################
 TegelKleur = input("Normaal, Rood, NaarKeuze").lower()
-
 TegelPrijsPerm2 = 250
 if TegelKleur == "normaal":
     if GroteZwembad < 20:
         TegelPrijsPerm2 = 250
     elif GroteZwembad >= 20:
         TegelPrijsPerm2 = 200
-
 elif TegelKleur == "rood":
     if GroteZwembad < 20:
         TegelPrijsPerm2 = 275
     elif GroteZwembad >= 20:
         TegelPrijsPerm2 = 220
-
 elif TegelKleur == "naarkeuze":
     if GroteZwembad < 20:
         TegelPrijsPerm2 = 350
     elif GroteZwembad >= 20:
         TegelPrijsPerm2 = 325
 
-
-
 HoeveelGrond = Lengte * Breedte * Hoogte
-
 AfgevoerdeGrondTotaalPrijs = HoeveelGrond * AfgevoerdeGrondPrijs
 UitGraafKostenPrijs = UitGraafKosten * GroteZwembad
 TegelTotaalPrijs = TegelPrijsPerm2 * (Lengte * Breedte)
 TotaalPrijs = (EindPrijsKilometers + UitGraafKostenPrijs + TegelTotaalPrijs + AfgevoerdeGrondTotaalPrijs)
 print(" ")
 print(" ")
-print("Uitgraaf kosten =", UitGraafKostenPrijs, "Euro")
-print("Afvoeren Grond =", AfgevoerdeGrondTotaalPrijs, "Euro")
-print("Voor rij kosten =", EindPrijsKilometers, "Euro")
-print("Beton + Tegel kosten =", TegelTotaalPrijs)
-print("Totaal =", TotaalPrijs, "Euro")
+print(f"Uitgraaf kosten = {UitGraafKostenPrijs:.2f} Euro")
+print(f"Afvoeren Grond ={AfgevoerdeGrondTotaalPrijs:.2f} Euro")
+print(f"Voor rij kosten = {EindPrijsKilometers:.2f} Euro")
+print(f"Beton + Tegel kosten = {TegelTotaalPrijs:.2f}, Euro")
+print(f"Totaal = {TotaalPrijs:.2f}, Euro")
