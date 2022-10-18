@@ -18,8 +18,3 @@
 
 # for item in (2,7,9,3):
 #     print(item)
-
-
-HealthPoints = 200
-
-damage = 7.5
