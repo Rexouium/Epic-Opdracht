@@ -5,8 +5,6 @@
  #   robotArm.moveRight()
 # Na jouw code wachten tot het sluiten van de window:
 
-
-from shutil import move
 from RobotArm import RobotArm
 
 robotArm = RobotArm('exercise 6')
