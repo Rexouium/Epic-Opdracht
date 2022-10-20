@@ -1,13 +1,21 @@
 # Robotarm bibliotheek inladen
 from RobotArm import RobotArm
-            
-# De robotarm opstarten in een bepaald level, bijvoorbeeld 'exercise 1'
-robotArm = RobotArm('exercise 1')
-            
+
+robotArm = RobotArm('exercise 2')
+
 # Jouw python instructies zet je vanaf hier:
-robotArm.moveRight()
 robotArm.grab()
-robotArm.moveLeft()
+for i in range(9):
+    robotArm.moveRight()
 robotArm.drop()
+
+for i in range(5):
+    robotArm.moveLeft()
+robotArm.grab()
+
+for i in range(4):
+    robotArm.moveRight()
+robotArm.drop()
+
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()
