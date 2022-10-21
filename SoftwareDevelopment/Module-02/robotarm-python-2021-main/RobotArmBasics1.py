@@ -1,10 +1,3 @@
-#for i in range(5):
- #   robotArm.grab()
- #   robotArm.moveLeft()
- #   robotArm.drop()
- #   robotArm.moveRight()
-# Na jouw code wachten tot het sluiten van de window:
-
 from RobotArm import RobotArm
 
 robotArm = RobotArm('exercise 6')

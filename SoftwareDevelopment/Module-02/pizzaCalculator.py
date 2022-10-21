@@ -21,7 +21,7 @@ while True:
         print("Small", Small_Price,"Medium", Medium_Price,"Large", Large_Price)
         Pizza_Grote = input("Hoe groot? (Options above only) :").lower()
     except:
-        print(error)
+        print(error) 
 ###############################################
     try:
         if (Pizza_Grote == "small"):

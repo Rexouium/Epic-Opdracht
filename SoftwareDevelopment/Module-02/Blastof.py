@@ -1,3 +1,3 @@
-print("Blastof!!!")
-for i in range(0,31):
+for i in range(0,31, -1):
     print(i)
+print("Blastof!!!")
