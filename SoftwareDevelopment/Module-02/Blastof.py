@@ -1,3 +1,3 @@
-for i in range(0,31, -1):
+for i in range(31, 0, -1):
     print(i)
 print("Blastof!!!")
