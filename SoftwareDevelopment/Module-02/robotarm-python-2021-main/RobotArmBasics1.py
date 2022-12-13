@@ -6,9 +6,7 @@ robotArm = RobotArm('exercise 12')
 
 Rijen = 9
 
-while True:
-    if Rijen == 0:
-        break
+while Rijen != 0:
     robotArm.grab()
     Kleur = robotArm.scan()
     if Kleur != "red":

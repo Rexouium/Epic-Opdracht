@@ -1,9 +1,15 @@
-Antwoord = 50
-ErbijAntwoord = 51
-PrintVariable = "50"
+#Antwoord = 50
+#ErbijAntwoord = 51
+#PrintVariable = "50"
 
-while Antwoord < 1000:
-    Antwoord += ErbijAntwoord
-    PrintVariable += "+" + str(ErbijAntwoord)
-    print(PrintVariable, "=" , Antwoord)
-    ErbijAntwoord += 1 # 4
+Antwoord2 = int(input("Eerste getal"))
+ErbijAntwoord2 = Antwoord2 + 1
+PrintVariable2 = str(Antwoord2)
+
+
+
+while Antwoord2 < 1000:
+    Antwoord2 += ErbijAntwoord2
+    PrintVariable2 += "+" + str(ErbijAntwoord2)
+    print(PrintVariable2, "=" , Antwoord2)
+    ErbijAntwoord2 += 1 # 4
