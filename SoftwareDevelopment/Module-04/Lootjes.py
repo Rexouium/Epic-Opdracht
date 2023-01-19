@@ -23,3 +23,4 @@ while x != len(NameHolder):
             x += 1
 for x in range(listamount):
     print(f"{NameHolder[x]} heeft {RandomNameList[x]}")
+#comitFix
