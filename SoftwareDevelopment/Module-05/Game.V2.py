@@ -1,85 +1,64 @@
 import random
-keepgoing = True
-# items amount / active
-while keepgoing:
-    firstkey = False
-    points = 0
-    Crowbar = False
 
-    GenRandomNumber = random.randint(1, 3)
+game = True
+points = 0
 
+while game:
+    def getZone(item: str) -> str:
+        inputSentence = ""
+        genNumber = random.randint(1, (3 if item != "vent" else 2))
+        print(genNumber)
 
-    def zone_search(key1, pnts):
-        while not key1:
-            generatornumber = random.randint(1, 3)
-            print(generatornumber)
-            choice = int(input("1 for under the bed, 2 for in the closet, 3 for on the floor:  "))
-            if choice == generatornumber:
-                print("you found the key")
-                key1 = True
-                pnts += 1
-            else:
-                print("You took too long and THEY found you[ GAME OVER ]")
-                pnts = 0
+        if item == "crowbar" or item == "key":
+            inputSentence = f"1 for under the {'bed' if item == 'key' else 'worktable'}, 2 for in the {'closet' if item == 'key' else 'cabinet'} and 3 for on the {'floor' if item == 'keyy' else 'table'}"
+        elif item == "door":
+            inputSentence = "Door 1, 2 or 3?"
+        elif item == "vent":
+            inputSentence = "1 to open the vent, 2 to wait 5 minutes and then open the vent:"
 
+        while not (choice := input(inputSentence)).isdigit():
+            print("Please provide one of the mentioned numbers.")
 
-    def zone_search2(bar, pnts):
-        while not bar:
-            generatornumber = random.randint(1, 3)
-            print(generatornumber)
-            choice = int(input("1 for under the worktable, 2 for in the cabinet, 3 for on the table:  "))
-            if choice == generatornumber:
-                print("you found the crowbar")
-                bar = True
-                pnts += 1
-            else:
-                print("You took too long and THEY found you[ GAME OVER ]")
-                pnts = 0
+        choice = int(choice)
 
-
-    def doorpath(key1, pnts):
-        generatornumber = random.randint(1, 3)
-        print(generatornumber)
-        choise = int(input("1 2 or 3 (door numbers)"))
-        if choise == generatornumber and key1:
-            print("You opened the door to the next area")
-            pnts += 1
-        elif choise == generatornumber and not key1:
-            print("You walk to the door but it would not open. They catch up and kill you [ Game Over ]")
-            pnts = 0
+        if choice == genNumber:
+            print(
+                f"Congratulations! {f'You found {item}' if item == 'crowbar' or item == 'key' else f'You opened the {item} to the next area'}")
+            return "point"
         else:
-            print("Wrong door quickly try again!")
+            print(f"Oh no... You're a fucking idiot and you died...")
 
-
-    def ventpath(bar, pnts):
-        generatornumber = random.randint(1, 2)
-        print(generatornumber)
-        choise = int(input("1 to open, 2 to wait 5 min and then open the vent:  "))
-        if choise == generatornumber and bar:
-            print("You opened the vent to the next area")
-            pnts += 1
-        elif choise == generatornumber and not bar:
-            print("You walk to the door but it would not open. They catch up and kill you [ Game Over ]")
-            pnts -= 1
-        else:
-            print("they found you and you run")
-
-
-    zone_search(firstkey, points)
     while points < 20:
-        GenRandomNumber = random.randint(1, 18)
-        if GenRandomNumber > 0 and GenRandomNumber < 7:
-            zone_search(firstkey, points)
-        elif GenRandomNumber > 6 and GenRandomNumber < 13:
-            doorpath(firstkey, points)
+        print("points: ", points)
+        genNumber = random.randint(1, 18)
+        if genNumber > 0 and genNumber < 7:
+            if getZone("key") == "point":
+                points += 1
+            else:
+                points = 20
+        elif genNumber > 6 and genNumber < 13:
+            if getZone("door") == "point":
+                points += 1
+            else:
+                points = 20
         else:
-            zone_search2(Crowbar, points)
-            ventpath(Crowbar, points)
+            if getZone("crowbar") == "point":
+                points += 1
+            else:
+                points = 20
+            if points < 20:
+                if getZone("vent") == "point":
+                    points += 1
+                else:
+                    points = 20
 
-    keepgoing = input("y om te veder te gaan en n om te stoppen")
-    if keepgoing == "n":
-        keepgoing = False
-        print("the end")
+    replay = ""
+    while not (replay == "y" or replay == "n"):
+        replay = input("Would you like to play again?")
+
+    if replay == "y":
+        points = 0
+        choice = ""
     else:
-        print("restart")
-        keepgoing = True
+        print(f"Good job. You ended with {points} points")
+        game = False
