@@ -23,3 +23,4 @@ while Rijen != 0:
 
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()
+
