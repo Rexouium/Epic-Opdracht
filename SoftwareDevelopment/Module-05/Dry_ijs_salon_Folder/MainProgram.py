@@ -10,3 +10,5 @@ while keep_ordering:
     order_safing.append(bestellingteller(bollen, Container_question))
     print(order_safing)
     keep_ordering = orderfuncorstopfunc()
+
+print('\n'.join(order_safing))

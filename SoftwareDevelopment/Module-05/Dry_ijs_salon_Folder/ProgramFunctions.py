@@ -10,31 +10,35 @@ def hoe_veel_bollen_ijs(text):
 
 
 def bakje_of_hoorentje(checker):
-    while True:
+    waarinloop = True
+    containertype = ""
+    while waarinloop:
         if checker <= 4:
-            containertypevar = int(input("1 voor een bakje en 2 voor een hoorentje"))
-            if containertypevar == 1:
+            while not (containertypevar := input("1 voor een bakje en 2 voor een hoorentje")).isdigit():
+                print("Nummer alstublieft")
+            if int(containertypevar) == 1:
                 containertype = "bakje"
             else:
                 containertype = "hoorentje"
-            break
+            waarinloop = False
         elif checker > 4:
             containertype = "bakje"
-            break
+            waarinloop = False
         else:
             print("Not an option here.")
     return containertype
 
 
 def bestellingteller(hoeveelbollen, container):
-    order = [f"{container} met: {hoeveelbollen} bollen ijs"]
+    order = f"{container} met: {hoeveelbollen} bollen ijs"
     return order
 
 
 def orderfuncorstopfunc():
     while True:
-        stopvar = int(input("1 voor meer bestellen en 2 om te stoppen met bestellen"))
-        if stopvar == 1:
+        while not (stopvar := input("1 voor meer bestellen en 2 om te stoppen met bestellen")).isdigit():
+            print("Nummers, nerd.")
+        if int(stopvar) == 1:
             print("Processing")
             return True
         else:
