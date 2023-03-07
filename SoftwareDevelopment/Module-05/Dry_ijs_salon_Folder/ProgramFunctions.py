@@ -29,7 +29,7 @@ def bakje_of_hoorentje(checker):
     return containertype
 
 
-def bestellingteller(hoeveelbollen, container):
+def bestellingteller(hoeveelbollen, container,):
     order = f"{container} met: {hoeveelbollen} bollen ijs"
     return order
 
@@ -43,3 +43,8 @@ def orderfuncorstopfunc():
             return True
         else:
             return False
+
+
+def aantal_bollen_voor_bon(hoeveelbollen, aantal_bollen_mainscriptvar):
+    aantal_bollen_mainscriptvar += hoeveelbollen
+    return aantal_bollen_mainscriptvar
