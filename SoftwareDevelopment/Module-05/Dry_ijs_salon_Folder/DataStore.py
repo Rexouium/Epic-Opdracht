@@ -1,5 +1,5 @@
-IjsSmaaken_En_Kosten = {
-    'name': 'vanile',
+IjsBolPrijs = {
+    'name': 'bol',
     'cash': 1.10
 }
 
