@@ -47,7 +47,22 @@ def orderfuncorstopfunc():
 
 def aantal_bollen_voor_bon(hoeveelbollen, aantal_bollen_mainscriptvar):
     aantal_bollen_mainscriptvar += hoeveelbollen
+
     return aantal_bollen_mainscriptvar
+
+
+def aantal_bakjes_voor_bon(aantal_bakjes_mainscriptvar):
+     bakjeamount = 1
+     aantal_bakjes_mainscriptvar += bakjeamount
+
+     return aantal_bakjes_mainscriptvar
+
+
+def aantal_hoorentjes_voor_bon(aantal_hoorentjes_mainscriptvar):
+    hoorentjesamount = 1
+    aantal_hoorentjes_mainscriptvar += hoorentjesamount
+
+    return aantal_hoorentjes_mainscriptvar
 
 
 def AantallenDataStoreProcessor(Container_Question_Info, Order_Dict):
@@ -56,10 +71,6 @@ def AantallenDataStoreProcessor(Container_Question_Info, Order_Dict):
     else:
         Order_Dict[Container_Question_Info] = 1
 
-def Prijs_Calculator(bollen_Aantal, Bakjes_Aantal, Hoorentjes_Aantal, Totale_bol_prijs, Totale_bak_prijs, Totale_hooren_prijs):
-    Totale_bol_prijs = bollen_Aantal * bollenprijs
-    Totale_bak_prijs = Bakjes_Aantal * bakjesprijs
-    Totale_hooren_prijs = Hoorentjes_Aantal * hoorentjeprijs
-
-def bonnetje_maker(bollen_Aantal, Bakjes_Aantal, Hoorentjes_Aantal):
+def bonnetje_maker(bollen_Aantal, Bakjes_Aantal, Hoorentjes_Aantal, Bol_Price_path):
     print()
+
