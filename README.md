@@ -1,3 +1,3 @@
 To do:
 
-vedder gaan dry ijssallon 
+vedder gaan dry ijssallon.
