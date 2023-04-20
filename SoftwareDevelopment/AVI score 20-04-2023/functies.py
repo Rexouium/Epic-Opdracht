@@ -37,11 +37,7 @@ def getFileContentAsString(textFile: str) -> str:
 
 
 def getNumberOfCharacters(text: str) -> int:
-    strvar = text
-    # print(strvar)
-    VarToReturn = len(strvar)
-    VarToReturn -= 1
-    print(len(strvar))
+    VarToReturn = len(text)
     return VarToReturn
 
 # opdracht 2
@@ -55,11 +51,27 @@ def getNumberOfSentences(text: str) -> int:
     total_sentences = (amount_of_sentences_dots + amount_of_sentences_uitroeptekens + amount_of_sentences_questionmarks)
     if total_sentences == 0:
         total_sentences = 1
-    print(total_sentences)
+   # print(total_sentences)
     return total_sentences
 
 # opdracht 3
 
 
 def getNumberOfWords(text: str) -> int:
-    return len(text.split(' '))
+    return len(text.split())
+
+
+def getAviScore(text: str) -> int:
+    funreturnvalue = getNumberOfWords(text)
+    if funreturnvalue <= 7:
+        return 5
+    elif funreturnvalue == 8:
+        return 6
+    elif funreturnvalue == 9:
+        return 7
+    elif funreturnvalue == 10:
+        return 8
+    elif funreturnvalue == 11:
+        return 11
+    elif funreturnvalue > 11:
+        return 12

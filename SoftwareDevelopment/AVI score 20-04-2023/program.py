@@ -11,23 +11,27 @@ def calculate():
     characterLabel.config(text=f"Characters: {getNumberOfCharacters(textToBeCalculated)}")
     sentencesLabel.config(text=f"Zinnen: {getNumberOfSentences(textToBeCalculated)}")
     woordenLabel.config(text=f"Woorden: {getNumberOfWords(textToBeCalculated)}")
-
+    AviScoreLabel.config(text=f"AviScore: {getAviScore(textToBeCalculated)}")
 
 # variables TK
+
+
 root = tk.Tk()              # create tkInter window
 root.title('Text analyser')  # set title
 root.geometry('600x600')    # set dimension
 calculateInput = tk.Text(root, width = 70, height = 30, background='lightgrey')            # generate imput element
 calculateButton = ttk.Button(root, text='Bereken score(s)', command=calculate)  #generate button when pressed -> calculate
-characterLabel = tk.Label(root, text=f'Karakters:', width=20, bg='black', fg='white')  # generate characterLabel
-sentencesLabel = tk.Label(root, text=f'Zinnen:', width=20, bg='black', fg='white')     # generate sentencesLabel
-woordenLabel = tk.Label(root, text=f'Woorden:', width=20, bg='black', fg='white')     # generate sentencesLabel
+characterLabel = tk.Label(root, text=f'Karakters: ', width=20, bg='black', fg='white')  # generate characterLabel
+sentencesLabel = tk.Label(root, text=f'Zinnen: ', width=20, bg='black', fg='white')     # generate sentencesLabel
+woordenLabel = tk.Label(root, text=f'Woorden: ', width=20, bg='black', fg='white')     # generate sentencesLabel
+AviScoreLabel = tk.Label(root, text=f'Score: :', width=20, bg='black', fg='white')  # generate characterLabel
 
 calculateInput.place(x=20, y=20)   # place is one of the ways to put elements on root (window).
 calculateButton.place(x=20, y=520)
 characterLabel.place(x=180, y=560)
 sentencesLabel.place(x=20, y=560)
 woordenLabel.place(x=20, y=600)
+AviScoreLabel.place(x=180, y=600)
 
 # start program
 root.mainloop()  # runs until stopped with default stop button.
