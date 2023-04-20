@@ -18,7 +18,6 @@ ALLOWED_IN_WORD = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
 
 # depending on the type of text you wish you get an easy, difficult or text from file.
 
-
 def getText(choice: str) -> str:
     if choice == 'easy':
         return EASY_TEXT
@@ -37,19 +36,23 @@ def getFileContentAsString(textFile: str) -> str:
 
 
 def getNumberOfCharacters(text: str) -> int:
-    VarToReturn = len(text)
-    return VarToReturn
+    totaalaantalgoedgekeurd: int = 0
+    for x in text:
+        if x in ALLOWED_IN_WORD:
+            totaalaantalgoedgekeurd += 1
+    return totaalaantalgoedgekeurd
 
 # opdracht 2
 
 
 def getNumberOfSentences(text: str) -> int:
-    textstrvar = text
-    amount_of_sentences_dots = textstrvar.count('.')
-    amount_of_sentences_uitroeptekens = textstrvar.count('!')
-    amount_of_sentences_questionmarks = textstrvar.count('?')
+    getnumberofchars = getNumberOfCharacters(text)
+
+    amount_of_sentences_dots = text.count('.')
+    amount_of_sentences_uitroeptekens = text.count('!')
+    amount_of_sentences_questionmarks = text.count('?')
     total_sentences = (amount_of_sentences_dots + amount_of_sentences_uitroeptekens + amount_of_sentences_questionmarks)
-    if total_sentences == 0:
+    if total_sentences == 0 and getnumberofchars > 0:
         total_sentences = 1
    # print(total_sentences)
     return total_sentences
@@ -62,16 +65,17 @@ def getNumberOfWords(text: str) -> int:
 
 
 def getAviScore(text: str) -> int:
-    funreturnvalue = getNumberOfWords(text)
-    if funreturnvalue <= 7:
+    wordreturnvalue = (getNumberOfWords(text) / getNumberOfSentences(text))
+    wordreturnvalue = round(wordreturnvalue, 0)
+    if wordreturnvalue <= 7:
         return 5
-    elif funreturnvalue == 8:
+    elif wordreturnvalue == 8:
         return 6
-    elif funreturnvalue == 9:
+    elif wordreturnvalue == 9:
         return 7
-    elif funreturnvalue == 10:
+    elif wordreturnvalue == 10:
         return 8
-    elif funreturnvalue == 11:
+    elif wordreturnvalue == 11:
         return 11
-    elif funreturnvalue > 11:
+    elif wordreturnvalue > 11:
         return 12

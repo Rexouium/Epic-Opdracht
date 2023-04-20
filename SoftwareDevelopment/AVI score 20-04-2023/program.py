@@ -1,7 +1,7 @@
 from functies import *
 import tkinter as tk
 from tkinter import ttk
-import tkinter.messagebox  # if you want to send messages to the user.
+#import tkinter.messagebox  # if you want to send messages to the user.
 
 # functions
 
